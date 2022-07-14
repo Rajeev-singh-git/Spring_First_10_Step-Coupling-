@@ -7,7 +7,7 @@ public class PacManGame implements GamingConsole {
 	}
 	
 	public void down() {
-		System.out.println(" pag go down");
+		System.out.println("pac go down");
 	}
 	
 	public void left() {
