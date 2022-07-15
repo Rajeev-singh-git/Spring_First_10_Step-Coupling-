@@ -10,9 +10,14 @@ import com.in28minutes.spring.learnspringframework.enterprise.example.data.DataS
 @Component
 public class BusinesService{
 	
-	
 	@Autowired
 	private DataService dataService;
+	
+    public BusinesService(DataService dataService) {
+		super();
+		System.out.println("Constructor Injection");
+		this.dataService = dataService;
+	}
 	
 	public long calculateSum() {
 		List<Integer> data = dataService.getData();
