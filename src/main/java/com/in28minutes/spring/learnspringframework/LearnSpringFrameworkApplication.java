@@ -4,11 +4,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
+import com.in28minutes.spring.learnspringframework.enterprise.example.web.MyWebController;
 import com.in28minutes.spring.learnspringframework.game.GameRunner;
-import com.in28minutes.spring.learnspringframework.game.GamingConsole;
-import com.in28minutes.spring.learnspringframework.game.MarioGame;
-import com.in28minutes.spring.learnspringframework.game.PacManGame;
-import com.in28minutes.spring.learnspringframework.game.SuperContraGame;
 
 @SpringBootApplication
 public class LearnSpringFrameworkApplication {
@@ -25,9 +22,12 @@ public class LearnSpringFrameworkApplication {
     //GameRunner runner = new GameRunner(game);
 	
 	GameRunner runner = context.getBean(GameRunner.class);
-	
 	runner.run();
+	
+	MyWebController controller = context.getBean(MyWebController.class);
     
+	System.out.println(controller.returnValueFromBusinessService());
+	
 	}
 
 }
